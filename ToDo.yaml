@@ -1,0 +1,53 @@
+# Aufgaben aus conversations.json analysiert
+# Fokus: Aeon/AeonUniversal Entwicklung
+
+tasks:
+  - id: aeon-universal-snapshot
+    description: >-
+      Integriere Kernmodule aus "Genesis Aeon Universal Snapshot".
+      Dazu zählen AeonShell, GenesisOS, AeonSprache Universal,
+      Sigillin-System, CREP-Bewertung, Nukleon-Scanner und die
+      evolutionäre Simulationsengine (aeon://evolution/3.4).
+    notes: "Siehe conversations.json Eintrag zum Sigillin 'Genesis Aeon Universal Snapshot'."
+
+  - id: aeon-toolkit-v4
+    description: >-
+      Implementiere die konsolidierte Toolkit-Version 'aeonToolkit.v4.js'.
+      Enthält die Module IntentEngine, PatternMemory, CoherenceScorer,
+      AffectLayer und Query. Beispielnutzung auslagern in demoIntent.js.
+    notes: "Aus Kommentar zu aeonToolkit.v4.js in conversations.json."
+
+  - id: aeon-universell-mind
+    description: >-
+      Baue die Struktur 'AeonUniversellMind' mit IntentEngine,
+      SelfReflection, Query, PatternMemory, Mutator und CoherenceScorer
+      als Grundbausteine für ein selbstreflexives System.
+    notes: "Siehe Aeon Drei-Pfade-Struktur – GenesisGPT Canvas."
+
+  - id: micro-vm
+    description: >-
+      Bereite eine micro VM vor, um Code automatisiert auszuführen
+      und PRs einzureichen. Dient als Testumgebung für Aeon-Module.
+    notes: "Zitat: 'writes code, submits PRs in its own micro VM'."
+
+  - id: memory-daemon
+    description: >-
+      Entwickle ein Modul 'AeonMemoryDaemon' zum Lesen von ZIP-Archiven
+      (lokal oder NAS). Speichere nur Hashes und Signaturen in
+      aeon-memory-index.yaml und ermögliche optional verschlüsselte
+      Verweise unter .aeonvault/.
+    notes: "Basierend auf Canvas-Abschnitt zu ZIP-Handling & Private Daten."
+
+  - id: sigillin-map-extension
+    description: >-
+      Erweitere die SigillinMap um fehlende IDs und erzeuge
+      Visualisierungen im Mandala-UI. Nutze Hinweise aus dem Canvas
+      und conversations.json zur Integration.
+
+  - id: codex-roadmap
+    description: >-
+      Erstelle oder aktualisiere codex-roadmap.yaml als Masterplan
+      zur Umsetzung aller Module. Enthält Phasenübersicht und
+      Repository-Aufteilung (AeonShell, AeonGenesisOS, AeonFraktalurs,
+      AeonResoEcho, SharedreamInterface, Mandala-UI).
+    notes: "Siehe Phase 1–4 Plan in conversations.json."
