@@ -51,3 +51,12 @@ tasks:
       Repository-Aufteilung (AeonShell, AeonGenesisOS, AeonFraktalurs,
       AeonResoEcho, SharedreamInterface, Mandala-UI).
     notes: "Siehe Phase 1–4 Plan in conversations.json."
+  - id: run-tests
+    description: >-
+      Führe alle vorhandenen Skripte aus (test, lint, docs:build) und behebe eventuelle Fehler.
+    notes: "Siehe codexinstructions.yaml – Programme testen."
+  - id: nukleon-scanner-v0-6
+    description: >-
+      Entwickle das Modul 'Nukleon-Scanner v0.6' weiter. Nutze die Resonanz-Analyse aus conversations.json
+      zur Verbesserung der Scan-Logik und integriere Ergebnisse in die Gesamtarchitektur.
+    notes: "Basierend auf Gesprächen zur Nukleon-Scanner Planung."
