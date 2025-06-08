@@ -1,0 +1,9 @@
+phases:
+  - id: phase1
+    description: Grundsystem und CLI
+  - id: phase2
+    description: Integration von AeonShell und GenesisOS
+  - id: phase3
+    description: Mandala-UI und Micro-VM
+  - id: phase4
+    description: Vollstaendige Automatisierung
