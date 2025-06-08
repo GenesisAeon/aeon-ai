@@ -9,3 +9,4 @@ Aeon sammelt Experimente rund um das UnifiedMandala-Konzept. Dieses Repository i
 
 ## Nutzung
 Installiere Abhaengigkeiten mit `pnpm install` und starte weitere Befehle ueber die bereitgestellten Skripte.
+- Werkzeuge zur Verarbeitung grosser Dateien im Ordner `scripts/`

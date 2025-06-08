@@ -60,3 +60,9 @@ tasks:
       Entwickle das Modul 'Nukleon-Scanner v0.6' weiter. Nutze die Resonanz-Analyse aus conversations.json
       zur Verbesserung der Scan-Logik und integriere Ergebnisse in die Gesamtarchitektur.
     notes: "Basierend auf Gesprächen zur Nukleon-Scanner Planung."
+  - id: conversations-scripts
+    description: >-
+      Implementiere Hilfsskripte zum Aufteilen und Filtern der grossen
+      conversations.json Datei. Fortschritte sollen ueber
+      conversations-progress.json verfolgt werden.
+    notes: "Siehe codexwork.yaml und big-files.sigil.yaml."
