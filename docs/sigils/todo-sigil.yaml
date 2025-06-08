@@ -419,3 +419,6 @@ aufgaben:
   - id: task-138
     beschreibung: "ZIP-Handling im AeonMemoryDaemon implementieren"
     status: erledigt
+  - id: task-139
+    beschreibung: "Hilfsskripte fuer conversations.json (split, filter, mark) umsetzen"
+    status: offen
