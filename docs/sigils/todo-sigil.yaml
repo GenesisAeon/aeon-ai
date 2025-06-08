@@ -415,3 +415,7 @@ aufgaben:
   - id: task-137
     beschreibung: "Synchronisierten Theorie-Index erstellen"
     status: offen
+
+  - id: task-138
+    beschreibung: "ZIP-Handling im AeonMemoryDaemon implementieren"
+    status: erledigt
