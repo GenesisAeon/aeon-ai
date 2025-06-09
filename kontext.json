@@ -1,0 +1,8 @@
+{
+  "sigillin_genesis_integration": {
+    "description": "Conversation indicates a request to combine a local Sigillin with the Genesis Sigillin. A YAML file containing SIGILLIN_CONTEXT and a Genesis ID should be provided along with a download link."
+  },
+  "genesis_aeon_universal_snapshot": {
+    "description": "Conversations mention a 'Genesis Aeon Universal Snapshot' summarizing key modules. Attachments include files like sigillin_genesis_gateway.json and genesisaeon_startsigillin.sigil.json."
+  }
+}
