@@ -434,3 +434,6 @@ aufgaben:
   - id: task-143
     beschreibung: "`codex-memory-kernel.ts` als zentrales Speicher-Modul einrichten"
     status: offen
+  - id: task-144
+    beschreibung: "Erarbeite und implementiere Testverfahren falls nicht vorhanden"
+    status: offen
