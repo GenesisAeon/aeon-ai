@@ -101,3 +101,9 @@ tasks:
       sofern noch keine Tests bestehen. Integriere die Abläufe in
       das npm Script `test` und bereite eine GitHub Action vor.
     notes: "Ergänzung gemäß codexwork.yaml."
+  - id: instruction-sorter
+    description: >-
+      Entwickle `instruction_sorter.ts`, das die Einträge aus
+      `codexworkinstructions.yaml` und `codexinstructions.yaml` analysiert,
+      logisch sortiert und in einer konsolidierten Datei ablegt.
+    notes: "Neue Aufgabe abgeleitet aus codexwork.yaml."

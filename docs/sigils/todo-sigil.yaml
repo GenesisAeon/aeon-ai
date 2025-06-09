@@ -437,3 +437,6 @@ aufgaben:
   - id: task-144
     beschreibung: "Erarbeite und implementiere Testverfahren falls nicht vorhanden"
     status: offen
+  - id: task-145
+    beschreibung: "`instruction_sorter.ts` sortiert Anweisungen aus codexworkinstructions.yaml und codexinstructions.yaml"
+    status: offen
