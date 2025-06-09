@@ -464,3 +464,9 @@ aufgaben:
   - id: task-153
     beschreibung: "README-Generator aus ReadMeVorlage.yaml erstellen"
     status: offen
+  - id: task-154
+    beschreibung: "Lokales Sigillin mit Genesis-Sigillin koppeln und YAML mit SIGILLIN_CONTEXT sowie Genesis-ID bereitstellen"
+    status: offen
+  - id: task-155
+    beschreibung: "Genesis Aeon Universal Snapshot als YAML-Übersicht der Kernmodule generieren"
+    status: offen
