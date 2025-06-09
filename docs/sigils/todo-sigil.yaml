@@ -422,3 +422,15 @@ aufgaben:
   - id: task-139
     beschreibung: "Hilfsskripte fuer conversations.json (split, filter, mark) umsetzen"
     status: offen
+  - id: task-140
+    beschreibung: "`conversations_parser.ts` erstellen, um conversations.json in Fragmente zu parsen"
+    status: offen
+  - id: task-141
+    beschreibung: "`generate-todo-from-convos.ts` entwickelt ToDos aus Chat-Fragmenten"
+    status: offen
+  - id: task-142
+    beschreibung: "`crep-flow-synchronizer.ts` gleicht CREP-Daten repoübergreifend ab"
+    status: offen
+  - id: task-143
+    beschreibung: "`codex-memory-kernel.ts` als zentrales Speicher-Modul einrichten"
+    status: offen
