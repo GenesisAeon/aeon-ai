@@ -95,3 +95,9 @@ tasks:
       Baue `codex-memory-kernel.ts` als zentrale Schnittstelle für
       Gesprächsfragmente und Sigillin-Speicher auf.
     notes: "Ebenfalls im Codex-Anchor als Modul vorgeschlagen."
+  - id: testverfahren-entwickeln
+    description: >-
+      Erarbeite und implementiere Testverfahren für alle Module,
+      sofern noch keine Tests bestehen. Integriere die Abläufe in
+      das npm Script `test` und bereite eine GitHub Action vor.
+    notes: "Ergänzung gemäß codexwork.yaml."
