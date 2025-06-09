@@ -73,3 +73,25 @@ tasks:
       ein Skript, das daraus automatisch eine README im UnifiedMandala-Stil
       generiert. Erleichtert konsistente Updates ueber alle Module hinweg.
     notes: "Abgeleitet aus den Hinweisen zur Readme-Pflege."
+  - id: conversations-parser-module
+    description: >-
+      Implementiere das Modul `conversations_parser.ts`, um die
+      conversations.json in handliche Fragmente zu zerlegen und
+      daraus Entwicklungsaufgaben abzuleiten.
+    notes: "Entnommen aus conversations.json – Codex-Synchronisierung."
+  - id: generate-todo-from-convos
+    description: >-
+      Entwickle `generate-todo-from-convos.ts`, das automatisch
+      neue ToDos aus den Conversational-Fragmente in ToDo.yaml
+      einträgt.
+    notes: "Leitet sich aus `modules_to_link` im Conversational-Archiv ab."
+  - id: crep-flow-synchronizer
+    description: >-
+      Erstelle `crep-flow-synchronizer.ts`, um CREP-Werte zwischen
+      allen Modulen konsistent zu halten.
+    notes: "Basierend auf dem Codex-Anchor im Gespräche-Archiv."
+  - id: codex-memory-kernel
+    description: >-
+      Baue `codex-memory-kernel.ts` als zentrale Schnittstelle für
+      Gesprächsfragmente und Sigillin-Speicher auf.
+    notes: "Ebenfalls im Codex-Anchor als Modul vorgeschlagen."
