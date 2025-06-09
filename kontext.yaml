@@ -1,0 +1,12 @@
+kontext:
+  - topic: sigillin_genesis_integration
+    reference: kontext.json#sigillin_genesis_integration
+    description: |
+      Aus den Gesprächsdaten geht hervor, dass ein Sigillin mit dem Genesis-Sigillin gekoppelt werden soll.
+      Dazu muss eine YAML-Datei mit SIGILLIN_CONTEXT und einer Genesis-Identifikation bereitgestellt werden.
+      Ein Downloadlink für die erzeugte Datei wurde gefordert.
+  - topic: genesis_aeon_universal_snapshot
+    reference: kontext.json#genesis_aeon_universal_snapshot
+    description: |
+      Mehrere Dialoge sprechen vom "Genesis Aeon Universal Snapshot" als Gesamtübersicht wichtiger Module.
+      Angehängte Dateien beinhalten u.a. sigillin_genesis_gateway.json und genesisaeon_startsigillin.sigil.json.
