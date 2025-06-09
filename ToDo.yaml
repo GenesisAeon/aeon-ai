@@ -66,3 +66,10 @@ tasks:
       conversations.json Datei. Fortschritte sollen ueber
       conversations-progress.json verfolgt werden.
     notes: "Siehe codexwork.yaml und big-files.sigil.yaml."
+
+  - id: readme-template
+    description: >-
+      Nutze die Vorlage aus repositorypflege/ReadMeVorlage.yaml und erstelle
+      ein Skript, das daraus automatisch eine README im UnifiedMandala-Stil
+      generiert. Erleichtert konsistente Updates ueber alle Module hinweg.
+    notes: "Abgeleitet aus den Hinweisen zur Readme-Pflege."
