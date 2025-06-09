@@ -112,3 +112,7 @@ tasks:
       Passe das Beispiel-Hook `.git/hooks/sendemail-validate.sample` an und
       ersetze die dortigen TODO-Platzhalter durch echte Validierungspr\xFCfungen.
     notes: "Aufgabe aus TODO-Kommentaren in den Git-Hooks abgeleitet."
+  - id: kontext-sync
+    description: >-
+      Kontext aus conversations.json extrahieren und in kontext.json einpflegen
+    notes: "gemäß codexwork.yaml Kontextverständnis erweitern"

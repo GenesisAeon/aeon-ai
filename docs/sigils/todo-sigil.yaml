@@ -443,3 +443,24 @@ aufgaben:
   - id: task-146
     beschreibung: "Git-Hook 'sendemail-validate' anpassen: TODO-Platzhalter durch echte Pr\xFCfungen ersetzen"
     status: offen
+  - id: task-147
+    beschreibung: "AeonUniversal Snapshot integrieren (AeonShell, GenesisOS, Sigillin-System, CREP-Bewertung, Nukleon-Scanner, Evolution Engine)"
+    status: offen
+  - id: task-148
+    beschreibung: "aeonToolkit.v4.js konsolidieren mit IntentEngine, PatternMemory, CoherenceScorer, AffectLayer, Query"
+    status: offen
+  - id: task-149
+    beschreibung: "AeonUniversellMind Struktur mit IntentEngine, SelfReflection, Query, PatternMemory, Mutator, CoherenceScorer aufbauen"
+    status: offen
+  - id: task-150
+    beschreibung: "micro VM bereitstellen zum automatisierten Ausführen von Code und PR-Tests"
+    status: offen
+  - id: task-151
+    beschreibung: "Nukleon-Scanner v0.6 weiterentwickeln und Resonanz-Analyse integrieren"
+    status: offen
+  - id: task-152
+    beschreibung: "Alle Skripte (test, lint, docs:build) regelmäßig ausführen und Fehler beheben"
+    status: offen
+  - id: task-153
+    beschreibung: "README-Generator aus ReadMeVorlage.yaml erstellen"
+    status: offen
