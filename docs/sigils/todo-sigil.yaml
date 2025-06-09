@@ -440,3 +440,6 @@ aufgaben:
   - id: task-145
     beschreibung: "`instruction_sorter.ts` sortiert Anweisungen aus codexworkinstructions.yaml und codexinstructions.yaml"
     status: offen
+  - id: task-146
+    beschreibung: "Git-Hook 'sendemail-validate' anpassen: TODO-Platzhalter durch echte Pr\xFCfungen ersetzen"
+    status: offen

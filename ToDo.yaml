@@ -107,3 +107,8 @@ tasks:
       `codexworkinstructions.yaml` und `codexinstructions.yaml` analysiert,
       logisch sortiert und in einer konsolidierten Datei ablegt.
     notes: "Neue Aufgabe abgeleitet aus codexwork.yaml."
+  - id: git-hook-sendemail-validate
+    description: >-
+      Passe das Beispiel-Hook `.git/hooks/sendemail-validate.sample` an und
+      ersetze die dortigen TODO-Platzhalter durch echte Validierungspr\xFCfungen.
+    notes: "Aufgabe aus TODO-Kommentaren in den Git-Hooks abgeleitet."
