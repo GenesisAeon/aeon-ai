@@ -1,0 +1,16 @@
+instructions:
+  - >-
+    Aus dem Kontext des Repos und conversations.json unter Berücksichtigung der repoübergreifenden Gesamtarchitektur
+    neue ToDos ableiten, überlegen wie du sie implementieren kannst und in ToDo.yaml eintragen
+  - codexwork.yaml öffnen und ausführen
+  - conversations.json verarbeiten und Fortschritt in conversations-progress.json markieren
+  - Dokumentation mithilfe der Vorlagen aktualisieren
+  - Fehlt diese Datei, alle offenen TODOs sammeln und als neue docs/sigils/todo-sigil.yaml anlegen
+  - Hinweise im Ordner repositorypflege beachten
+  - instruction_sorter.ts anwenden, um codex-Anweisungen konsolidiert abzulegen
+  - Nach unimplementierten Aufgaben oder TODO-Kommentaren suchen und in docs/sigils/todo-sigil.yaml ergänzen
+  - Öffne und Analysiere kontext.yaml!
+  - Programm und alle Funktionen laufen lassen und testen, Fehler beheben
+  - Sigillin-Dateien prüfen und Synchronisierung sicherstellen
+  - Tests und Linting ausführen
+  - Während eines Commits möglichst viele TODOs abarbeiten und dokumentieren
