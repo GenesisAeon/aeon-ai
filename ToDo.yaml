@@ -148,3 +148,24 @@ tasks:
       Definiere `sigillin.schema.json` zur strukturellen Validierung von
       Sigillin-Dateien.
     notes: "Siehe docs/sigils/todo-sigil.yaml"
+
+  - id: generate-todo-sigil-script
+    description: >-
+      Schreibe `generate-todo-sigil.js`, das Quellcode-Dateien nach
+      TODO-Kommentaren durchsucht und diese gesammelt in
+      `docs/sigils/todo-sigil.yaml` einträgt.
+    notes: "Abgeleitet aus repository_map.yaml: generate-todo-sigil.js"
+
+  - id: generate-readmes-script
+    description: >-
+      Entwickle `generate-readmes.ts`, um README-Dateien auf Basis der
+      Vorlage `repositorypflege/ReadMeVorlage.yaml` automatisiert zu
+      erzeugen.
+    notes: "Repository_map.yaml nennt generate-readmes.ts"
+
+  - id: self-analyze-script
+    description: >-
+      Implementiere `self-analyze.js`, das den Quellcode analysiert und
+      eine zusammenfassende Auswertung als Sigillin oder Markdown
+      speichert.
+    notes: "Siehe repository_map.yaml: self-analyze.js"

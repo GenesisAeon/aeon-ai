@@ -474,3 +474,15 @@ aufgaben:
   - id: task-156
     beschreibung: "chronopoem-committer.ts – automatisches Commit-Tool für CHRONOPOEM.md"
     status: offen
+
+  - id: task-157
+    beschreibung: "generate-todo-sigil.js – TODO-Kommentare sammeln und in todo-sigil.yaml schreiben"
+    status: offen
+
+  - id: task-158
+    beschreibung: "generate-readmes.ts – README-Dateien automatisch aus YAML-Vorlagen erzeugen"
+    status: offen
+
+  - id: task-159
+    beschreibung: "self-analyze.js – Repository-Analyse mit Ergebnis als Sigillin oder Markdown"
+    status: offen
