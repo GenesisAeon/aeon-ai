@@ -35,6 +35,10 @@ pnpm run dev
 - `./scripts/aeon.sh cycle_start` – Startet lokalen Mandala-Zyklus
 - `./scripts/aeon.sh chronopoem` – Erzeugt poetische Commit-Signatur
 
+## Hilfsskripte
+- `node scripts/instruction_sorter.js` – fasst Codex-Anweisungen zusammen
+- `node scripts/SigillinValidator.js <file>` – prüft Sigillin-Dateien gemäß `sigillin.schema.json`
+
 ## Lizenz
 [![MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 - Code: MIT
