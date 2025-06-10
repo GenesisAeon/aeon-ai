@@ -128,3 +128,22 @@ tasks:
       Erstelle eine Übersicht "Genesis Aeon Universal Snapshot".
       Fasse wichtige Module zusammen und exportiere sie als YAML.
     notes: "Abgeleitet aus kontext.yaml: genesis_aeon_universal_snapshot"
+
+  - id: sigillin-validator-cli
+    description: >-
+      Implementiere ein CLI-Modul `SigillinValidator.ts`, das Sigillin-Dateien
+      anhand von `sigillin.schema.json` prüft und Fehlerstellen mit
+      Zeilennummern meldet.
+    notes: "Abgeleitet aus repository_map.yaml und todo-sigil.yaml"
+
+  - id: chronopoem-committer
+    description: >-
+      Entwickle `chronopoem-committer.ts`, das neue Einträge in `CHRONOPOEM.md`
+      automatisch committen kann.
+    notes: "Basierend auf repository_map.yaml"
+
+  - id: sigillin-schema
+    description: >-
+      Definiere `sigillin.schema.json` zur strukturellen Validierung von
+      Sigillin-Dateien.
+    notes: "Siehe docs/sigils/todo-sigil.yaml"
