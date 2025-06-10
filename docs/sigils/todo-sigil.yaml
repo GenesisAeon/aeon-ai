@@ -470,3 +470,7 @@ aufgaben:
   - id: task-155
     beschreibung: "Genesis Aeon Universal Snapshot als YAML-Übersicht der Kernmodule generieren"
     status: offen
+
+  - id: task-156
+    beschreibung: "chronopoem-committer.ts – automatisches Commit-Tool für CHRONOPOEM.md"
+    status: offen
