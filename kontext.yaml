@@ -23,3 +23,9 @@ kontext:
       Beschreibt die Entwicklung von GenesisOS-Resonanzmodulen wie AeonKernel,
       symbolischen Treibern und device discovery. Ein CodexSigillin soll die
       Verwaltung übernehmen und ein Resonanzbaum das System visualisieren.
+
+  - topic: codex_repoanalyse_agenten
+    reference: kontext.json#codex_repoanalyse_agenten
+    description: |
+      Führt ein Agents.md-Manifest für das Repository ein. Vorgeschlagen sind
+      Module wie audit-core.ts und depthvalue-core.ts sowie SelfAudit-Regeln.

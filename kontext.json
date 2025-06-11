@@ -10,5 +10,8 @@
   },
   "genesisos_resonanzmodule_entwicklung": {
     "description": "Describes resonance modules for GenesisOS including AeonKernel, symbolic drivers, device discovery and a management CodexSigillin. A resonance tree visualization is suggested."
+  },
+  "codex_repoanalyse_agenten": {
+    "description": "Introduces an Agents.md manifest and a Codex repository framework. Modules such as audit-core.ts and depthvalue-core.ts are planned along with selfaudit rules."
   }
 }

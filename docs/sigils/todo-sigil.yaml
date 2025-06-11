@@ -510,3 +510,19 @@ aufgaben:
   - id: task-167
     beschreibung: "Mandala-Interface für symbolische Gerätezustände umsetzen"
     status: offen
+
+  - id: task-168
+    beschreibung: "symbolic-context-injector.ts implementieren"
+    status: offen
+
+  - id: task-169
+    beschreibung: "sigillin_bridge_engine.ts entwickeln"
+    status: offen
+
+  - id: task-170
+    beschreibung: "emergence_signal_hub.ts für CREP-Ereignisse anlegen"
+    status: offen
+
+  - id: task-171
+    beschreibung: "depth_sonic.ts erstellt .wav-Export für Tiefenwerte"
+    status: offen
