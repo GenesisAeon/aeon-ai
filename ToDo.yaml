@@ -193,3 +193,15 @@ tasks:
     description: >-
       Mandala-Interface für symbolische Gerätezustände entwickeln.
     notes: "GenesisOS Resonanzmodule Entwicklung."
+  - id: codex-repo-framework
+    description: >-
+      Initialisiere das Codex-Repository-Management nach den Vorgaben aus
+      "Codex Repoanalyse und Agenten". Enthält selfaudit.yaml, masterplan.yaml
+      und automatisierte Commit-Vorschläge.
+    notes: "Siehe conversations.json Chat 'Codex Repoanalyse und Agenten'."
+
+  - id: depth-modules
+    description: >-
+      Implementiere die Module mandala-depth-compare.tsx, depth_sonic_matrix.ts
+      sowie pact-depth-rules.ts und stelle einen Export 'AeonDepthPack.zip' bereit.
+    notes: "Aus den Pfadoptionen und Modultipps im Repoanalyse-Chat abgeleitet."
