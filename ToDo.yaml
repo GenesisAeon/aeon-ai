@@ -264,3 +264,74 @@ tasks:
       Implementiere `depth_sonic.ts`, welches aus Tiefenwerten
       Frequenz-Exporte im .wav-Format generiert.
     notes: "Aus Chat 'GenesisOS Resonanzmodule Entwicklung'."
+  - id: selfaudit-engine
+    description: >-
+      Implementiere eine SelfAudit-Engine basierend auf den Gesprächsanweisungen.
+      Liest selfaudit.yaml und prüft commit-reife Zustände.
+    notes: "Aufgabe aus Codex Repoanalyse und Agenten."
+
+  - id: suggestion-engine
+    description: >-
+      Baue automated_suggestions.yaml und ein zugehöriges Script zur Erstellung
+      optimaler Commit-Vorschläge.
+    notes: "Siehe Workflow aus Codex Repoanalyse und Agenten."
+
+  - id: codex-dashboard
+    description: >-
+      Entwickle ein visuelles Dashboard für das Monitoring autonomer Prozesse.
+    notes: "Konkreter Schritt aus Codex Repoanalyse und Agenten."
+
+  - id: fuzzy-device-matching
+    description: >-
+      Implementiere fuzzy matching für dmesg-Ausgaben im ReflexScanner.
+    notes: "Zusatzidee aus GenesisOS Resonanzmodule Entwicklung."
+
+  - id: reflexscanner-plugin-framework
+    description: >-
+      Erstelle ein Plugin-System, um Parser und Handler als separate Pakete zu laden.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-realtime-dashboard
+    description: >-
+      Baue ein Web-Dashboard (Flask/FastAPI) zur Echtzeitvisualisierung erkannter Sigillin-Ereignisse.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-cloud-export
+    description: >-
+      Ermögliche Export erkannter Sigillin-Daten an Cloud-Services.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-encryption
+    description: >-
+      Speichere CREPConvoReport.json und todo-sigil.yaml verschlüsselt auf der Festplatte.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-config-reload
+    description: >-
+      Implementiere Reloading der Trigger-Konfiguration ohne Neustart.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-metrics
+    description: >-
+      Messe Laufzeit und Event-Rate mit Prometheus-Client.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-auth
+    description: >-
+      Unterstütze OAuth2-Client-Credentials für Integrationen.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-i18n
+    description: >-
+      Biete mehrsprachige Ausgaben per CLI-Flag.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: reflexscanner-dev-mode
+    description: >-
+      Entwickle einen --dev-Modus für ausführliche Debug-Logs und Live-dmesg.
+    notes: "Siehe reflexscanner_gpt_additional_ideas."
+
+  - id: autonomous-repo-workflow
+    description: >-
+      Simuliere einen autonomen Workflow-Testlauf und validiere Commit-Strategien.
+    notes: "Konkrete Schritte aus Codex Repoanalyse und Agenten."
