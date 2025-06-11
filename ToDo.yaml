@@ -205,3 +205,38 @@ tasks:
       Implementiere die Module mandala-depth-compare.tsx, depth_sonic_matrix.ts
       sowie pact-depth-rules.ts und stelle einen Export 'AeonDepthPack.zip' bereit.
     notes: "Aus den Pfadoptionen und Modultipps im Repoanalyse-Chat abgeleitet."
+  - id: codex-convo-modules
+    description: >-
+      Entwickle Analyse-Module fuer conversations.json: CREPConversationScanner.ts,
+      ChronoPoemExtractor.ts und SymbolEchoLayer.ts. Dazu Hilfs-Hooks wie
+      useCREPMemoryPattern.ts und GPTExpressionWeaver.ts.
+    notes: "Aufgaben aus Chat 'Codex Resonanzsynchronisation'."
+
+  - id: crep-automation-suite
+    description: >-
+      Implementiere CREPToDoLinker.ts, CREPChronoMonitor.ts,
+      ResonanceActionPrompt.tsx und export-crep-docs.ts als Teil einer
+      automatisierten CREP-Auswertung. Erstelle ausserdem Tests in
+      CREPConversationScanner.test.ts.
+    notes: "Siehe Codex Resonanzsynchronisation."
+
+  - id: crep-ui-and-sync
+    description: >-
+      Baue PoeticMotifGenerator.ts, SigillinSuggestionEngine.ts,
+      CREPFeedbackLoop.ts, SigillinOnDemandGenerator.ts, CREPToDoPrioritizer.ts,
+      CREPConvoHeatmap.tsx und CREPSyncService.ts. Stelle ein CLI 'aeon.sh
+      crep-analyze --watch' bereit und integriere CREPPromptAdapter.ts sowie
+      CREPGuard.ts.
+    notes: "Module aus der Resonanzsynchronisation-Liste."
+
+  - id: depthvalue-integration
+    description: >-
+      Binde depthvalue-core in die Codex-AuditPipeline ein, wie im Chat
+      betont.
+    notes: "Anweisung aus 'Codex Resonanzsynchronisation'."
+
+  - id: genesisos-codexsigillin
+    description: >-
+      Erzeuge ein CodexSigillin zur GenesisOS-Verwaltung und plane eine
+      Mandala-Visualisierung des Resonanzbaums.
+    notes: "Aus Chat 'GenesisOS Resonanzmodule Entwicklung'."

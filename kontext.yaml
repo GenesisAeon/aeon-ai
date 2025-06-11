@@ -10,3 +10,16 @@ kontext:
     description: |
       Mehrere Dialoge sprechen vom "Genesis Aeon Universal Snapshot" als Gesamtübersicht wichtiger Module.
       Angehängte Dateien beinhalten u.a. sigillin_genesis_gateway.json und genesisaeon_startsigillin.sigil.json.
+  - topic: codex_resonanzsynchronisation
+    reference: kontext.json#codex_resonanzsynchronisation
+    description: |
+      Dieses Chat-Protokoll beschreibt ein Synchronisationskonzept über mehrere
+      Repositories hinweg. Vorgeschlagen werden Module wie conversations_parser.ts,
+      generate-todo-from-convos.ts, crep-flow-synchronizer.ts und
+      codex-memory-kernel.ts, um CREP- und Sigillin-Daten konsistent zu halten.
+  - topic: genesisos_resonanzmodule_entwicklung
+    reference: kontext.json#genesisos_resonanzmodule_entwicklung
+    description: |
+      Beschreibt die Entwicklung von GenesisOS-Resonanzmodulen wie AeonKernel,
+      symbolischen Treibern und device discovery. Ein CodexSigillin soll die
+      Verwaltung übernehmen und ein Resonanzbaum das System visualisieren.
