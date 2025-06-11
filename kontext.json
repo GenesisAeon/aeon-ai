@@ -4,5 +4,11 @@
   },
   "genesis_aeon_universal_snapshot": {
     "description": "Conversations mention a 'Genesis Aeon Universal Snapshot' summarizing key modules. Attachments include files like sigillin_genesis_gateway.json and genesisaeon_startsigillin.sigil.json."
+  },
+  "codex_resonanzsynchronisation": {
+    "description": "Chat anchors cross-repository synchronization via CREP. Modules such as conversations_parser.ts, generate-todo-from-convos.ts, crep-flow-synchronizer.ts and codex-memory-kernel.ts are proposed to build a persistent reference memory and keep CREP and Sigillin data in sync."
+  },
+  "genesisos_resonanzmodule_entwicklung": {
+    "description": "Describes resonance modules for GenesisOS including AeonKernel, symbolic drivers, device discovery and a management CodexSigillin. A resonance tree visualization is suggested."
   }
 }
