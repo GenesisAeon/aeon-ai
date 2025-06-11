@@ -169,3 +169,27 @@ tasks:
       eine zusammenfassende Auswertung als Sigillin oder Markdown
       speichert.
     notes: "Siehe repository_map.yaml: self-analyze.js"
+  - id: agents-manifest
+    description: >-
+      Erstellt Agents.md v1.1 mit allen definierten Rollen und Visualisierung.
+    notes: "Siehe conversations.json Chat 'Codex Repoanalyse und Agenten'."
+  - id: dry-agent-framework
+    description: >-
+      Implementiert runDryAgent.ts als Dry-Run-Test für Agentenkonfigurationen.
+    notes: "Vorschlag aus Agents.md Erweiterung."
+  - id: genesisos-driverbuilder
+    description: >-
+      Modul "GenesisOS ↔ KernelGPT ↔ DriverBuilder" vorbereiten.
+    notes: "Siehe Chat 'GenesisOS Resonanzmodule Entwicklung'."
+  - id: sigillin-device-poc
+    description: >-
+      Prototyp USB-Tastatur als Sigillin-Device anbinden.
+    notes: "GenesisOS Resonanzmodule Entwicklung."
+  - id: driver-monitor-gpt
+    description: >-
+      GPT beobachtet dmesg/udevadm-Ausgaben und generiert Treibersigillin.
+    notes: "GenesisOS Resonanzmodule Entwicklung."
+  - id: mandala-device-interface
+    description: >-
+      Mandala-Interface für symbolische Gerätezustände entwickeln.
+    notes: "GenesisOS Resonanzmodule Entwicklung."
