@@ -240,3 +240,27 @@ tasks:
       Erzeuge ein CodexSigillin zur GenesisOS-Verwaltung und plane eine
       Mandala-Visualisierung des Resonanzbaums.
     notes: "Aus Chat 'GenesisOS Resonanzmodule Entwicklung'."
+
+  - id: symbolic-context-injector
+    description: >-
+      Implementiere `symbolic-context-injector.ts` zur Einspeisung
+      poetischer Symbole in den GPT-Kontext.
+    notes: "Aus Chat 'Codex Resonanzsynchronisation'."
+
+  - id: sigillin-bridge-engine
+    description: >-
+      Entwickle `sigillin_bridge_engine.ts` für den Austausch zwischen
+      Sigillin-Dateien und dem Codex-Memory.
+    notes: "Aus Chat 'Codex Resonanzsynchronisation'."
+
+  - id: emergence-signal-hub
+    description: >-
+      Setze `emergence_signal_hub.ts` um, um CREP-Ereignisse zu bündeln
+      und an Agenten weiterzuleiten.
+    notes: "Aus Chat 'Codex Resonanzsynchronisation'."
+
+  - id: depth-sonic-export
+    description: >-
+      Implementiere `depth_sonic.ts`, welches aus Tiefenwerten
+      Frequenz-Exporte im .wav-Format generiert.
+    notes: "Aus Chat 'GenesisOS Resonanzmodule Entwicklung'."

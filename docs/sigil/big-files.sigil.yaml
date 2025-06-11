@@ -13,4 +13,4 @@ files:
     size: 45MB
     progress_file: docs/sigils/conversations-progress.json
     verarbeitung: Aufteilen in JSON-Chunks à 100 Einträge
-processed_fragments: []
+processed_fragments: ["conversations-0.json", "conversations-1.json", "conversations-2.json"]
