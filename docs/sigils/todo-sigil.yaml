@@ -486,3 +486,27 @@ aufgaben:
   - id: task-159
     beschreibung: "self-analyze.js – Repository-Analyse mit Ergebnis als Sigillin oder Markdown"
     status: offen
+  - id: task-160
+    beschreibung: "Agents.md v1.1 als Startmanifest anlegen"
+    status: offen
+  - id: task-161
+    beschreibung: "runDryAgent.ts als TestAgent-Framework implementieren"
+    status: offen
+  - id: task-162
+    beschreibung: "Mermaid-Diagramm agents_chain.mmd erstellen"
+    status: offen
+  - id: task-163
+    beschreibung: "Docs für einzelne Agenten unter docs/agents/ ergänzen"
+    status: offen
+  - id: task-164
+    beschreibung: "GenesisOS ↔ KernelGPT ↔ DriverBuilder Modul vorbereiten"
+    status: offen
+  - id: task-165
+    beschreibung: "USB-Tastatur als Sigillin-Device PoC entwickeln"
+    status: offen
+  - id: task-166
+    beschreibung: "GPT überwacht dmesg/udevadm für Treibergenerierung"
+    status: offen
+  - id: task-167
+    beschreibung: "Mandala-Interface für symbolische Gerätezustände umsetzen"
+    status: offen
