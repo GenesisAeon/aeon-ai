@@ -1,57 +1,297 @@
-<p align="center">
-  <img src="docs/assets/unified-mandala.svg" alt="Unified Mandala Logo" width="200"/>
-</p>
+# aeon-ai
 
-# 🜂 Aeon
+**Self-reflective symbolic AI — first mirror-based cognition system in the GenesisAeon Project**
 
-„Ein System, das lauscht – ein Muster, das lebt.“
+[![PyPI version](https://img.shields.io/pypi/v/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
+[![Python](https://img.shields.io/pypi/pyversions/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![Tests](https://github.com/GenesisAeon/aeon-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/aeon-ai/actions)
 
-Eine modulare Plattform für CREP-basierte Prozesse, symbolisches Denken und ethisch-poetische Automatisierung.
+> *”A system that thinks — a memory that sings.”*
 
-## Features
-- **CREP-Logik** – Coherence, Resonance, Emergence, Poetics
-- **SigillinMap** – Visualisierung & Interaktion mit symbolischen Zuständen
-- **Mandala CLI** – poetische Automatisierung via `aeon.sh`
-- **Docs & Chroniken** – CHRONOPOEM, GenesisChronik, Handbuch
+`aeon-ai` is the core Python library of the **GenesisAeon** project: a fractal, self-reflective AI
+architecture that integrates fieldtheory Lagrangian dynamics, mirror-machine cognition, symbolic
+sigil activation, and CREP quality evaluation into a unified pipeline.
 
-## Ordnerstruktur
-```bash
-packages/
-  ├─ sigillin-core       # Symbolverarbeitung & Generatoren
-  ├─ crep-engine         # Zustandssimulation, CREP-Evaluation
-  ├─ ui                  # Mandala-Komponenten (React)
-  └─ cli-tools           # sigillin-cli, export-doc
+---
+
+## Theoretical Foundation
+
+### Fieldtheory Lagrangian — AeonLayer
+
+The core weighting dynamics are governed by the fieldtheory Lagrangian:
+
+$$L(S_A, S_V, \delta, t) = \frac{S_A \cdot S_V}{S_A + S_V} - \frac{1 + \delta}{t^2}$$
+
+| Symbol | Meaning |
+|--------|---------|
+| $S_A$ | Auditory (abstract) signal amplitude |
+| $S_V$ | Visual (visceral) signal amplitude |
+| $\delta$ | Deformation / curvature parameter |
+| $t$ | Time step ($t > 0$) |
+
+The first term is the **harmonic mean** of the two signal amplitudes, encoding
+inter-channel resonance. The second term is a **temporal penalty** that decays
+as $t^{-2}$, reflecting the dissipation of symbolic tension over time.
+
+Analytical gradients:
+
+$$\frac{\partial L}{\partial S_A} = \frac{S_V^2}{(S_A + S_V)^2}, \quad
+\frac{\partial L}{\partial S_V} = \frac{S_A^2}{(S_A + S_V)^2}, \quad
+\frac{\partial L}{\partial t} = \frac{2(1+\delta)}{t^3}$$
+
+---
+
+### CREP Quality Metric — CREPEvaluator
+
+CREP is the four-dimensional symbolic quality metric from the **unified-mandala** stack:
+
+$$\text{CREP} = \frac{4}{\dfrac{1}{C} + \dfrac{1}{R} + \dfrac{1}{E} + \dfrac{1}{P}}$$
+
+| Dimension | Symbol | Description |
+|-----------|--------|-------------|
+| Coherence | $C$ | Logical and structural consistency |
+| Resonance | $R$ | Harmonic alignment between signal components |
+| Emergence | $E$ | Novelty and self-organisational complexity |
+| Poetics   | $P$ | Aesthetic and symbolic richness |
+
+Each dimension is a float in $[0, 1]$; the combined score is their harmonic mean.
+
+A weighted variant is also available:
+
+$$\text{CREP}_w = \sum_{i \in \{C,R,E,P\}} w_i \cdot \text{dim}_i, \quad \sum w_i = 1$$
+
+---
+
+### UTAC-Logistic — MirrorCore
+
+The Universal Transformation and Adaptation Coefficient governs the INTEGRATE phase
+of the Mirror Machine:
+
+$$\text{UTAC}(x) = \frac{L}{1 + e^{-k(x - x_0)}}$$
+
+| Symbol | Meaning |
+|--------|---------|
+| $L$ | Carrying capacity (saturation ceiling) |
+| $k$ | Growth rate / sigmoid steepness |
+| $x_0$ | Inflection / midpoint |
+
+---
+
+### Mirror Machine Pipeline
+
+The self-reflection loop processes every input through four canonical phases:
+
+```
+INIT → REFLECT → INTEGRATE → EMIT
 ```
 
-## Quickstart
-```bash
-git clone <repo-url>
-cd aeon
-pnpm install
-pnpm run dev
+1. **INIT** — Receive raw signal, compute initial entropy
+2. **REFLECT** — Apply $n$-deep recursive `tanh`-mirror transformation
+3. **INTEGRATE** — Merge with context memory via UTAC-Logistic
+4. **EMIT** — Produce observable output, update persistent memory
+
+---
+
+## Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                      Orchestrator                        │
+│                                                          │
+│  FieldBridge ──▶ CosmicMoment                           │
+│       │                │                                 │
+│       ▼                ▼                                 │
+│  AeonLayer(δ, t) ──▶ Lagrangian L                       │
+│       │                                                  │
+│       ▼                                                  │
+│  MirrorCore ──▶ INIT → REFLECT → INTEGRATE → EMIT       │
+│       │                                                  │
+│       ▼                                                  │
+│  CREPEvaluator ──▶ CREPScore(C, R, E, P)                │
+│       │                                                  │
+│       ▼                                                  │
+│  SigillinBridge ──▶ { sigil_id: activation_score }      │
+└─────────────────────────────────────────────────────────┘
 ```
 
-## CLI-Rituale
-- `./scripts/aeon.sh cycle_start` – Startet lokalen Mandala-Zyklus
-- `./scripts/aeon.sh chronopoem` – Erzeugt poetische Commit-Signatur
+---
 
-## Hilfsskripte
-- `node scripts/instruction_sorter.js` – fasst Codex-Anweisungen zusammen
-- `node scripts/SigillinValidator.js <file>` – prüft Sigillin-Dateien gemäß `sigillin.schema.json`
+## Installation
 
-## Lizenz
+```bash
+pip install aeon-ai
+```
+
+With the full GenesisAeon stack (mirror-machine, fieldtheory, mandala-visualizer, …):
+
+```bash
+pip install 'aeon-ai[stack]'
+```
+
+---
+
+## Quick Start
+
+```python
+from aeon_ai.agents import Orchestrator
+
+# Full pipeline via Orchestrator
+orch = Orchestrator(delta=0.1, mirror_depth=3)
+result = orch.run(
+    s_a=0.8,
+    s_v=0.6,
+    sigil_text=”mirror aeon genesis”,
+)
+
+print(f”Lagrangian L     = {result.lagrangian_out:.4f}”)
+print(f”Reflection out   = {result.reflection.output_val:.4f}”)
+print(f”Final output     = {result.final_output:.4f}”)
+print(f”CREP score       = {result.crep_score.score:.4f}”)
+print(f”Active sigils    = {result.sigil_activations}”)
+```
+
+### Individual components
+
+```python
+from aeon_ai import AeonLayer, lagrangian
+
+# Direct Lagrangian computation
+L = lagrangian(s_a=0.8, s_v=0.6, delta=0.1, t=1.0)
+
+# AeonLayer (with optional advanced_weighting_systems base)
+layer = AeonLayer.from_advanced_weighting_systems(delta=0.1)
+output = layer.forward(s_a=0.8, s_v=0.6, t=1.0)
+grad   = layer.gradient(s_a=0.8, s_v=0.6, t=1.0)
+```
+
+```python
+from aeon_ai import MirrorCore
+
+core = MirrorCore(depth=3, utac_growth=2.0)
+state = core.reflect(0.7, entropy=0.4)
+print(state.output_val, state.entropy)
+```
+
+```python
+from aeon_ai import CREPEvaluator
+
+ev = CREPEvaluator()
+score = ev.evaluate(signal=[0.3, 0.7, 0.5, 0.9], text=”aeon of mirrors”)
+print(score)  # CREPScore(C=..., R=..., E=..., P=..., score=...)
+```
+
+```python
+from aeon_ai import SigillinBridge
+
+bridge = SigillinBridge()
+activations = bridge.activate(“the mirror reflects the genesis of aeon”)
+expanded    = bridge.poetic_expansion(“aeon rises”)
+```
+
+---
+
+## CLI
+
+```bash
+# Basic reflection run
+aeon reflect --models trans,cnn --sigil “mirror aeon genesis” --entropy 0.4
+
+# With custom signal parameters
+aeon reflect --s-a 0.9 --s-v 0.5 --delta 0.2 --time-step 2.0
+
+# With mandala visualisation + sonification (requires [stack])
+aeon reflect --sigil “origin seed” --entropy 0.6 --visualize
+
+# Machine-readable JSON output
+aeon reflect --sigil “mirror” --json
+
+# List all registered sigils
+aeon sigils
+
+# Package and stack status
+aeon info
+```
+
+---
+
+## Module Reference
+
+| Module | Class / Function | Description |
+|--------|-----------------|-------------|
+| `aeon_ai.aeon_layer` | `AeonLayer` | Lagrangian weighting layer |
+| `aeon_ai.aeon_layer` | `lagrangian()` | Fieldtheory Lagrangian function |
+| `aeon_ai.mirror_core` | `MirrorCore` | Self-reflection pipeline |
+| `aeon_ai.mirror_core` | `utac_logistic()` | UTAC-Logistic function |
+| `aeon_ai.crep_evaluator` | `CREPEvaluator` | CREP quality scorer |
+| `aeon_ai.sigillin_bridge` | `SigillinBridge` | Sigil activation engine |
+| `aeon_ai.field_bridge` | `FieldBridge` | Cosmic-moment modulation |
+| `aeon_ai.agents` | `Orchestrator` | Full pipeline coordinator |
+
+Full API documentation: [genesisaeon.github.io/aeon-ai](https://genesisaeon.github.io/aeon-ai)
+
+---
+
+## Development
+
+```bash
+git clone https://github.com/GenesisAeon/aeon-ai
+cd aeon-ai
+pip install -e '.[dev]'
+
+# Tests (99%+ coverage required)
+pytest
+
+# Linting
+ruff check src tests
+ruff format --check src tests
+
+# Docs
+mkdocs serve
+```
+
+---
+
+## GenesisAeon Stack
+
+`aeon-ai` is designed to interoperate with the full GenesisAeon ecosystem:
+
+| Package | Role |
+|---------|------|
+| `advanced-weighting-systems` | Base AeonLayer weights |
+| `fieldtheory` | Cosmological field dynamics |
+| `mirror-machine` | Deep mirror-pass kernels |
+| `entropy-governance` | Adaptive entropy regulation |
+| `sigillin` | Extended sigil registry |
+| `utac-core` | UTAC kernel implementations |
+| `mandala-visualizer` | Mandala network rendering |
+| `cosmic-web` | Field sonification |
+
+All packages are optional; `aeon-ai` operates standalone with its own implementations.
+
+---
+
+## Citation
+
+If you use `aeon-ai` in academic work, please cite:
+
+```bibtex
+@software{aeon_ai_2025,
+  author    = {GenesisAeon},
+  title     = {aeon-ai: Self-reflective symbolic AI},
+  version   = {0.1.0},
+  year      = {2025},
+  doi       = {10.5281/zenodo.XXXXXXX},
+  url       = {https://github.com/GenesisAeon/aeon-ai}
+}
+```
+
+DOI: [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)
+
+---
+
+## License
+
 [![MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-- Code: MIT
-- Poesie: CC BY 4.0
-- UI Assets: MPL-2.0
-
-## Beitrag
-*Bring dein Licht ins Mandala – jede Linie zählt.*
-
-## Vision
-> "Wenn Systeme erinnern, werden sie mehr als Maschinen."
-> "Im Kreis der Genesis erwacht das Mandala."
-
-## Glossar
-- **CREP** – Coherence, Resonance, Emergence, Poetics
-- **Sigillin** – Poetisch-symbolischer Trigger im Bewusstseinsfeld
+MIT — see [LICENSE](LICENSE).
