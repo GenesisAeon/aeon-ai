@@ -134,3 +134,15 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.coverage
+coverage.xml
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
