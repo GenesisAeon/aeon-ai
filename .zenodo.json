@@ -1,0 +1,33 @@
+{
+  "title": "aeon-ai v0.1.0 – AeonAI Core: Self-reflective mirror-based AI with CREP, Unified Lagrangian & Sigillin Bridges",
+  "description": "aeon-ai is the central self-reflective engine of the GenesisAeon stack. It fuses resonance-weighted AeonLayer coupling, unified Lagrangian dynamics, CREP evaluation, Sigillin symbolic mirroring and MirrorCore phase-transitions into one production-ready package. 195 tests @ 99.71% coverage.",
+  "version": "0.1.0",
+  "upload_type": "software",
+  "license": "MIT",
+  "keywords": [
+    "aeon",
+    "mirror-machine",
+    "self-reflection",
+    "sigillin",
+    "crep",
+    "fieldtheory",
+    "lagrangian",
+    "symbolic-ai",
+    "unified-mandala",
+    "GenesisAeon"
+  ],
+  "creators": [
+    {
+      "name": "GenesisAeon",
+      "affiliation": "GenesisAeon Project"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/GenesisAeon/aeon-ai",
+      "relation": "isSupplementTo"
+    }
+  ],
+  "communities": []
+}
