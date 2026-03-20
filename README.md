@@ -5,7 +5,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
 [![Python](https://img.shields.io/pypi/pyversions/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19132293.svg)](https://doi.org/10.5281/zenodo.19132293)
 [![Tests](https://github.com/GenesisAeon/aeon-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/aeon-ai/actions)
 
 > *”A system that thinks — a memory that sings.”*

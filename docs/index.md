@@ -1,5 +1,8 @@
 # aeon-ai
 
+**DOI**: [10.5281/zenodo.19132293](https://doi.org/10.5281/zenodo.19132293)
+**Zenodo**: [https://zenodo.org/records/19132293](https://zenodo.org/records/19132293)
+
 **Self-reflective symbolic AI — GenesisAeon Project v0.1.0**
 
 > *"A system that thinks — a memory that sings."*
