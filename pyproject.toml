@@ -98,7 +98,6 @@ select = [
 ]
 ignore = [
     "D100", "D104",   # missing module/package docstrings
-    "ANN101", "ANN102",  # self/cls annotations
 ]
 
 [tool.ruff.lint.pydocstyle]
@@ -129,4 +128,11 @@ exclude_lines = [
     "if TYPE_CHECKING:",
     "raise NotImplementedError",
     "@(abc\\.)?abstractmethod",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.15.7",
 ]
