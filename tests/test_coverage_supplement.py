@@ -268,3 +268,45 @@ class TestOrchestratorExternalMock:
             orch = Orchestrator()
 
         assert orch is not None
+
+
+# ---------------------------------------------------------------------------
+# CLI — no phase-events branches (lines 262, 327) and __main__ guard (512)
+# ---------------------------------------------------------------------------
+
+
+class TestCliNoPhasesEvents:
+    def test_loop_phases_no_events(self) -> None:
+        """Cover line 262: loop+phases branch where process_trace returns []."""
+        mock_detector = MagicMock()
+        mock_detector.process_trace.return_value = []
+
+        with patch("aeon_ai.phase_detector.PhaseDetector", return_value=mock_detector):
+            result = runner.invoke(
+                app,
+                ["reflect", "--loop", "--phases", "--entropy", "0.3"],
+            )
+
+        assert result.exit_code == 0
+
+    def test_standard_phases_no_events(self) -> None:
+        """Cover line 327: standard mode phases branch where process_trace returns []."""
+        mock_detector = MagicMock()
+        mock_detector.process_trace.return_value = []
+
+        with patch("aeon_ai.phase_detector.PhaseDetector", return_value=mock_detector):
+            result = runner.invoke(app, ["reflect", "--phases", "--entropy", "0.3"])
+
+        assert result.exit_code == 0
+
+    def test_main_guard_covered(self) -> None:
+        """Cover line 512: if __name__ == '__main__': main() guard."""
+        import runpy
+
+        # Running the module via runpy triggers the __main__ block.
+        # Suppress SystemExit raised by typer when invoked without args.
+        try:
+            with patch.object(sys, "argv", ["aeon", "--help"]):
+                runpy.run_module("aeon_ai.cli", run_name="__main__", alter_sys=False)
+        except SystemExit:
+            pass  # expected — typer exits after --help

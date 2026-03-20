@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aeon-ai"
-version = "0.1.0"
-description = "Self-reflective symbolic AI: mirror-based cognition with fieldtheory Lagrangian dynamics"
+version = "0.2.0"
+description = "Self-reflective symbolic AI: real-time phase-transition detection and native self-reflection loop with mirror-based cognition"
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
@@ -15,15 +15,17 @@ keywords = [
     "aeon",
     "mirror-machine",
     "self-reflection",
+    "phase-transition",
     "sigillin",
     "crep",
     "fieldtheory",
     "lagrangian",
     "symbolic-ai",
     "unified-mandala",
+    "utac-logistic",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
@@ -68,7 +70,8 @@ Homepage = "https://github.com/GenesisAeon/aeon-ai"
 Repository = "https://github.com/GenesisAeon/aeon-ai"
 Documentation = "https://genesisaeon.github.io/aeon-ai"
 "Issue Tracker" = "https://github.com/GenesisAeon/aeon-ai/issues"
-DOI = "https://doi.org/10.5281/zenodo.XXXXXXX"
+DOI = "https://doi.org/10.5281/zenodo.19132293"
+Changelog = "https://github.com/GenesisAeon/aeon-ai/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/aeon_ai"]

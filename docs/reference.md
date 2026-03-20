@@ -1,6 +1,6 @@
 # API Reference
 
-Complete mathematical and programmatic reference for `aeon-ai` v0.1.0.
+Complete mathematical and programmatic reference for `aeon-ai` v0.2.0.
 
 ---
 
@@ -348,15 +348,171 @@ orch.reset()
 
 ---
 
-## 8. CLI Reference
+---
+
+## 8. Phase-Transition Detection *(v0.2.0)*
+
+### UTAC Trigger Function
+
+$$\Phi_{\text{trigger}}(H) = \frac{L}{1 + e^{-k(H - H_0)}}$$
+
+| Symbol | Param | Default | Description |
+|--------|-------|---------|-------------|
+| $H$ | `entropy` | — | Current Shannon entropy input |
+| $H_0$ | `entropy_threshold` | 0.37 | Pivot entropy threshold |
+| $k$ | `utac_growth` | 6.0 | UTAC sigmoid steepness |
+| $L$ | `utac_capacity` | 1.0 | Carrying capacity |
+
+A **UTAC_TRIGGER** event fires when $\Phi(H) \geq \theta_{\text{ceil}}$ (`utac_trigger_ceil`, default 0.85).
+
+### Collapse Condition
+
+$$\Delta_{\text{collapse}} = \left| x_n - x_{n-1} \right| < \epsilon_{\text{stab}}$$
+
+AND entropy below threshold:
+
+$$H_n < H_0$$
+
+### Phase-Label Mapping
+
+| UTAC value range | Label |
+|-----------------|-------|
+| $\Phi < 0.3$ | `STABLE` |
+| $0.3 \leq \Phi < 0.7$ | `TRANSITIONING` |
+| $\Phi \geq 0.7$ | `COLLAPSE_RISK` |
+
+### Python API
+
+```python
+from aeon_ai.phase_detector import (
+    PhaseDetector, PhaseTransitionEvent, TransitionType,
+    detect_phases_from_core, entropy_phase_label,
+)
+from aeon_ai.mirror_core import MirrorCore
+
+# Create detector
+detector = PhaseDetector(
+    entropy_threshold=0.37,
+    stability_floor=1e-4,
+    utac_trigger_ceil=0.85,
+    utac_capacity=1.0,
+    utac_growth=6.0,
+)
+
+# Process a complete mirror trace
+core = MirrorCore(depth=2)
+state = core.reflect(0.6, entropy=0.4)
+events = detector.process_trace(core.trace)
+
+# Per-state detection
+ev = detector.detect_transition(state)   # PhaseTransitionEvent | None
+
+# Collapse detection
+is_collapsed = detector.detect_collapse(core.trace)
+
+# UTAC query
+val     = detector.utac_value_at(0.45)  # float
+fired   = detector.utac_trigger_check(0.45)  # bool
+
+# Force a transition event
+ev = detector.force_transition(MirrorPhase.INIT, MirrorPhase.EMIT, entropy=0.5)
+
+# One-shot convenience function
+events = detect_phases_from_core(core.trace, entropy_threshold=0.37)
+
+# Entropy → label
+label = entropy_phase_label(0.5)  # "STABLE" | "TRANSITIONING" | "COLLAPSE_RISK"
+
+# Introspection
+detector.transition_history    # list[PhaseTransitionEvent]
+detector.state_dict()
+detector.reset()
+```
+
+---
+
+## 9. Native Self-Reflection Loop *(v0.2.0)*
+
+### Iteration Equations
+
+At each iteration $i = 0, \ldots, 6$:
+
+1. **Lagrangian:** $L_i = \text{AeonLayer.forward}(S_A^{(i)}, S_V^{(i)}, t)$
+
+2. **Mirror:** $r_i = \text{MirrorCore.reflect}(L_i,\, H_{i-1})$
+
+3. **CREP:** $\text{CREP}_i = \text{CREPEvaluator.evaluate}([S_A^{(i)}, S_V^{(i)}, L_i, r_i])$
+
+4. **Sigillin:** $\text{act}_i = \text{SigillinBridge.activate}(\text{text})$
+
+5. **Update:**
+$$S_A^{(i+1)} = S_A^{(i)} + \eta_i \cdot \frac{\partial L}{\partial S_A}$$
+$$S_V^{(i+1)} = S_V^{(i)} + \eta_i \cdot \frac{\partial L}{\partial S_V}$$
+
+where $\eta_i = \eta_0 \cdot (1 + 0.1 \cdot \max(\text{act}_i))$.
+
+6. **Entropy update:**
+$$H_i = \text{clip}\!\left(\text{CREP}_i \cdot H_0 + (1 - \text{CREP}_i) \cdot r_i^{\text{entropy}},\;[0.01, 0.99]\right)$$
+
+7. **Convergence check** (requires $i \geq 1$):
+$$|\text{CREP}_i - \text{CREP}_{i-1}| < \varepsilon = 10^{-4}$$
+
+### Python API
+
+```python
+from aeon_ai.self_reflection import SelfReflector, ReflectionLoopResult, MAX_ITER
+
+reflector = SelfReflector(
+    delta=0.0,
+    mirror_depth=2,
+    step_size=0.05,
+    crep_weights=(0.25, 0.25, 0.25, 0.25),
+    sigil_text="aeon mirror genesis",
+)
+
+result = reflector.self_reflect(
+    s_a=0.7,
+    s_v=0.6,
+    t=1.0,
+    entropy_threshold=0.37,   # H_0
+    sigil_text=None,           # use constructor default
+    metadata={"experiment": "run1"},
+)
+
+# MAX_ITER = 7 (hard upper bound)
+result.converged            # bool
+result.total_iterations     # int, <= MAX_ITER
+result.final_crep           # CREPScore
+result.final_lagrangian     # float
+result.final_s_a, result.final_s_v  # updated amplitudes
+result.snapshots            # list[IterationSnapshot]
+result.as_dict()            # JSON-serialisable dict
+
+# Per-snapshot inspection
+snap = result.snapshots[0]
+snap.iteration, snap.s_a, snap.s_v
+snap.lagrangian_value, snap.crep_score
+snap.reflection             # ReflectionState
+snap.sigil_activations      # {id: score}
+snap.entropy, snap.converged
+snap.as_dict()
+
+# History
+reflector.loop_history      # list[ReflectionLoopResult]
+reflector.state_dict()
+reflector.reset()
+```
+
+## 10. CLI Reference
 
 ```
 aeon [OPTIONS] COMMAND [ARGS]...
 
 Commands:
-  reflect    Run the AeonAI self-reflection pipeline
-  info       Display package information and component status
-  sigils     List all registered sigils
+  reflect         Run the AeonAI self-reflection pipeline
+  detect-phase    Detect phase-transition state for entropy value  (v0.2.0)
+  info            Display package information and component status
+  sigils          List all registered sigils
 
 aeon reflect [OPTIONS]
   --models TEXT        Comma-separated model ids (default: trans)
@@ -364,15 +520,23 @@ aeon reflect [OPTIONS]
   --entropy FLOAT      External entropy hint in [0,1] (default: 0.3)
   --s-a FLOAT          Auditory amplitude S_A (default: 0.7)
   --s-v FLOAT          Visual amplitude S_V (default: 0.6)
-  --delta FLOAT        Lagrangian deformation parameter δ (default: 0.0)
+  --delta FLOAT        Lagrangian deformation parameter delta (default: 0.0)
   --time-step FLOAT    Time step t > 0 (default: 1.0)
+  --loop               Run native self-reflection closed loop (v0.2.0)
+  --phases             Show real-time phase-transition events (v0.2.0)
   --visualize          Render mandala visualisation + sonification
   --json               Output raw JSON result
+
+aeon detect-phase [OPTIONS]                                           (v0.2.0)
+  --entropy FLOAT      Field entropy in [0,1] to analyse (default: 0.37)
+  --threshold FLOAT    Entropy pivot H0 (default: 0.37)
+  --utac-ceil FLOAT    UTAC trigger ceiling in (0,1] (default: 0.85)
+  --json               Output raw JSON
 ```
 
 ---
 
-## 9. Contract Tests (GenesisAeon Stack)
+## 11. Contract Tests (GenesisAeon Stack)
 
 When the optional stack packages are installed, the following contracts are enforced:
 
@@ -393,3 +557,18 @@ When the optional stack packages are installed, the following contracts are enfo
 - Accept `depth >= 1`
 - Produce exactly 4 `ReflectionState` objects per `reflect()` call
 - Persist memory across calls
+
+### phase-detector contract (v0.2.0)
+
+`PhaseDetector` must:
+- Return `None` from `detect_transition()` when no condition fires
+- Emit `PhaseTransitionEvent` with correct `TransitionType`
+- Operate standalone when `mirror-machine` package is absent
+
+### self-reflector contract (v0.2.0)
+
+`SelfReflector.self_reflect()` must:
+- Execute at most `MAX_ITER = 7` iterations
+- Return a `ReflectionLoopResult` with `converged` flag
+- Couple CREP score, Lagrangian gradient, and Sigillin activations at each step
+- Clip updated signal amplitudes to $[-10, 10]$
