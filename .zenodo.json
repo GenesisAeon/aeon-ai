@@ -1,15 +1,36 @@
 {
-  "title": "GenesisAeon/aeon-ai: v0.1.0 – AeonAI Core: Self-reflective mirror-based AI with CREP, Unified Lagrangian & Sigillin Bridges",
-  "version": "0.1.0",
+  "title": "GenesisAeon/aeon-ai: v0.2.0 – Real-time Phase-Transition Detection and Native Self-Reflection Loop",
+  "version": "0.2.0",
   "doi": "10.5281/zenodo.19132293",
   "creators": [
     {
       "name": "GenesisAeon Project"
     }
   ],
-  "description": "Self-reflective mirror-based AI fusing AeonLayer resonance, Unified Lagrangian dynamics, CREP evaluation and Sigillin symbolic mirroring for the GenesisAeon stack.",
-  "keywords": ["AeonAI", "CREP", "Unified Lagrangian", "SigillinBridge", "MirrorCore", "UTAC-Logistic", "GenesisAeon"],
+  "description": "aeon-ai v0.2.0 adds real-time phase-transition detection (PhaseDetector, UTAC-Logistic trigger, collapse detection) and a native closed-loop self-reflection engine (SelfReflector, max 7 iterations, CREP-Lagrangian-Sigillin coupling) to the self-reflective mirror-based AeonAI framework for the GenesisAeon stack.",
+  "keywords": [
+    "AeonAI",
+    "CREP",
+    "PhaseDetector",
+    "SelfReflector",
+    "Unified Lagrangian",
+    "SigillinBridge",
+    "MirrorCore",
+    "UTAC-Logistic",
+    "phase-transition",
+    "self-reflection",
+    "GenesisAeon",
+    "symbolic-ai",
+    "fieldtheory"
+  ],
   "license": "MIT",
   "upload_type": "software",
-  "access_right": "open"
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/GenesisAeon/aeon-ai",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
 }

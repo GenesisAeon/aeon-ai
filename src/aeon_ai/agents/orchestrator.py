@@ -3,11 +3,12 @@
 The Orchestrator wires together all aeon-ai components into a single coherent
 pipeline that mirrors the ``unified-mandala-neural/orchestrator`` architecture:
 
-    FieldBridge   → sample cosmic moment
-    AeonLayer     → compute Lagrangian-weighted output
-    MirrorCore    → self-reflective transformation
-    CREPEvaluator → quality scoring
-    SigillinBridge → symbolic activation
+    FieldBridge   -> sample cosmic moment
+    AeonLayer     -> compute Lagrangian-weighted output
+    MirrorCore    -> self-reflective transformation
+    CREPEvaluator -> quality scoring
+    SigillinBridge -> symbolic activation
+    PhaseDetector -> real-time phase-transition detection (v0.2.0)
 
 Each ``run`` call returns an :class:`OrchestratorResult` with all intermediate
 and final values for full traceability.
@@ -22,6 +23,7 @@ from aeon_ai.aeon_layer import AeonLayer
 from aeon_ai.crep_evaluator import CREPEvaluator, CREPScore
 from aeon_ai.field_bridge import CosmicMoment, FieldBridge
 from aeon_ai.mirror_core import MirrorCore, ReflectionState
+from aeon_ai.phase_detector import PhaseDetector, PhaseTransitionEvent
 from aeon_ai.sigillin_bridge import SigillinBridge
 
 
@@ -30,15 +32,16 @@ class OrchestratorResult:
     """Full output record from a single Orchestrator pipeline run.
 
     Attributes:
-        input_s_a:       Original auditory signal amplitude.
-        input_s_v:       Original visual signal amplitude.
-        lagrangian_out:  Raw AeonLayer Lagrangian output.
-        reflection:      Final :class:`~aeon_ai.mirror_core.ReflectionState`.
-        crep_score:      :class:`~aeon_ai.crep_evaluator.CREPScore` of the run.
-        sigil_activations: Dict mapping sigil-id → activation score.
-        cosmic_moment:   :class:`~aeon_ai.field_bridge.CosmicMoment` snapshot.
-        modulation:      Cosmic modulation factor applied.
-        metadata:        Arbitrary tracing key-value pairs.
+        input_s_a:         Original auditory signal amplitude.
+        input_s_v:         Original visual signal amplitude.
+        lagrangian_out:    Raw AeonLayer Lagrangian output.
+        reflection:        Final :class:`~aeon_ai.mirror_core.ReflectionState`.
+        crep_score:        :class:`~aeon_ai.crep_evaluator.CREPScore` of the run.
+        sigil_activations: Dict mapping sigil-id to activation score.
+        cosmic_moment:     :class:`~aeon_ai.field_bridge.CosmicMoment` snapshot.
+        modulation:        Cosmic modulation factor applied.
+        phase_events:      Phase-transition events detected during this run (v0.2.0).
+        metadata:          Arbitrary tracing key-value pairs.
     """
 
     input_s_a: float
@@ -49,6 +52,7 @@ class OrchestratorResult:
     sigil_activations: dict[str, float]
     cosmic_moment: CosmicMoment
     modulation: float
+    phase_events: list[PhaseTransitionEvent] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
 
     @property
@@ -75,6 +79,7 @@ class OrchestratorResult:
             "sigil_activations": self.sigil_activations,
             "cosmic_moment": self.cosmic_moment.as_dict(),
             "modulation": self.modulation,
+            "phase_events": [ev.as_dict() for ev in self.phase_events],
             "metadata": self.metadata,
         }
 
@@ -88,6 +93,7 @@ class Orchestrator:
     - :class:`~aeon_ai.crep_evaluator.CREPEvaluator`
     - :class:`~aeon_ai.sigillin_bridge.SigillinBridge`
     - :class:`~aeon_ai.field_bridge.FieldBridge`
+    - :class:`~aeon_ai.phase_detector.PhaseDetector` (v0.2.0)
 
     Integration with ``unified-mandala-neural`` is attempted at instantiation;
     native implementations are used as fallback.
@@ -106,21 +112,24 @@ class Orchestrator:
         crep_weights: tuple[float, float, float, float] = (0.25, 0.25, 0.25, 0.25),
         base_entropy: float = 0.3,
         load_sigils: bool = True,
+        entropy_threshold: float = 0.37,
     ) -> None:
         """Initialise Orchestrator with default sub-components.
 
         Args:
-            delta:        AeonLayer deformation parameter δ.
-            mirror_depth: Recursive reflection depth for MirrorCore.
-            crep_weights: Per-dimension CREP weights (C, R, E, P).
-            base_entropy: Baseline entropy for FieldBridge.
-            load_sigils:  Pre-load built-in sigils in SigillinBridge.
+            delta:             AeonLayer deformation parameter delta.
+            mirror_depth:      Recursive reflection depth for MirrorCore.
+            crep_weights:      Per-dimension CREP weights (C, R, E, P).
+            base_entropy:      Baseline entropy for FieldBridge.
+            load_sigils:       Pre-load built-in sigils in SigillinBridge.
+            entropy_threshold: Entropy pivot for PhaseDetector (v0.2.0).
         """
         self.aeon_layer = AeonLayer(delta=delta)
         self.mirror_core = MirrorCore(depth=mirror_depth)
         self.crep_evaluator = CREPEvaluator(weights=crep_weights)
         self.sigillin = SigillinBridge(load_defaults=load_sigils)
         self.field_bridge = FieldBridge(base_entropy=base_entropy)
+        self.phase_detector = PhaseDetector(entropy_threshold=entropy_threshold)
         self._results: list[OrchestratorResult] = []
         self._try_load_external()
 
@@ -142,13 +151,14 @@ class Orchestrator:
 
         Pipeline order:
             1. Sample CosmicMoment from FieldBridge
-            2. Adjust Lagrangian δ via cosmic tension
+            2. Adjust Lagrangian delta via cosmic tension
             3. Compute AeonLayer forward pass
             4. Run MirrorCore reflection with cosmic entropy
             5. Evaluate CREP quality score
             6. Compute Sigillin activations
             7. Apply cosmic modulation factor
-            8. Package and return :class:`OrchestratorResult`
+            8. Detect phase-transition events (v0.2.0)
+            9. Package and return :class:`OrchestratorResult`
 
         Args:
             s_a:           Auditory signal amplitude.
@@ -174,6 +184,7 @@ class Orchestrator:
 
         # 4. MirrorCore
         cosmic_entropy = self.field_bridge.inject_entropy(moment)
+        self.mirror_core.reset()
         reflection = self.mirror_core.reflect(l_out, entropy=cosmic_entropy)
 
         # 5. CREP
@@ -190,7 +201,11 @@ class Orchestrator:
         # 7. Modulation
         mod = self.field_bridge.modulation_factor(moment)
 
-        # 8. Package
+        # 8. Phase-transition detection (v0.2.0)
+        self.phase_detector.reset()
+        phase_events = self.phase_detector.process_trace(self.mirror_core.trace)
+
+        # 9. Package
         result = OrchestratorResult(
             input_s_a=s_a,
             input_s_v=s_v,
@@ -200,6 +215,7 @@ class Orchestrator:
             sigil_activations=activations,
             cosmic_moment=moment,
             modulation=mod,
+            phase_events=phase_events,
             metadata=metadata or {},
         )
         self._results.append(result)
@@ -224,6 +240,7 @@ class Orchestrator:
         self.mirror_core.reset()
         self.crep_evaluator.reset()
         self.field_bridge.reset()
+        self.phase_detector.reset()
         self._results.clear()
 
     @property
@@ -240,6 +257,7 @@ class Orchestrator:
         return {
             "aeon_layer": self.aeon_layer.state_dict(),
             "mirror_core": self.mirror_core.state_dict(),
+            "phase_detector": self.phase_detector.state_dict(),
             "result_count": len(self._results),
         }
 

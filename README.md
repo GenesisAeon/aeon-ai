@@ -1,6 +1,6 @@
 # aeon-ai
 
-**Self-reflective symbolic AI — first mirror-based cognition system in the GenesisAeon Project**
+**Self-reflective symbolic AI — real-time phase-transition detection & native self-reflection loop — GenesisAeon v0.2.0**
 
 [![PyPI version](https://img.shields.io/pypi/v/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
 [![Python](https://img.shields.io/pypi/pyversions/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
@@ -94,26 +94,69 @@ INIT → REFLECT → INTEGRATE → EMIT
 
 ---
 
+### Phase-Transition Detection — PhaseDetector *(v0.2.0)*
+
+Real-time detection of Mirror Machine phase transitions using a UTAC-Logistic trigger:
+
+$$\Phi_{\text{trigger}}(H) = \frac{L}{1 + e^{-k(H - H_0)}}$$
+
+| Symbol | Meaning |
+|--------|---------|
+| $H$ | Current Shannon entropy |
+| $H_0$ | Pivot entropy threshold (default 0.37) |
+| $k$ | UTAC growth rate |
+| $L$ | Carrying capacity |
+
+A **collapse** is detected when consecutive output values converge:
+
+$$\Delta_{\text{collapse}} = \left| x_n - x_{n-1} \right| < \epsilon_{\text{stab}}$$
+
+Three transition types are emitted: `FORWARD`, `COLLAPSE`, `UTAC_TRIGGER`, `FORCED`.
+
+---
+
+### Native Self-Reflection Loop — SelfReflector *(v0.2.0)*
+
+A closed-loop iterative engine coupling CREP score, Lagrangian gradient, and Sigillin bridges
+over at most **7 iterations** with convergence check:
+
+$$S_A^{(i+1)} = S_A^{(i)} + \eta \cdot \frac{\partial L}{\partial S_A}$$
+
+$$S_V^{(i+1)} = S_V^{(i)} + \eta \cdot \frac{\partial L}{\partial S_V}$$
+
+$$\text{convergence: } \left|\text{CREP}^{(i)} - \text{CREP}^{(i-1)}\right| < \varepsilon$$
+
+Where $\eta$ is the UTAC-modulated step size and CREP is evaluated at each iteration.
+
+---
+
 ## Architecture Overview
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                      Orchestrator                        │
-│                                                          │
-│  FieldBridge ──▶ CosmicMoment                           │
-│       │                │                                 │
-│       ▼                ▼                                 │
-│  AeonLayer(δ, t) ──▶ Lagrangian L                       │
-│       │                                                  │
-│       ▼                                                  │
-│  MirrorCore ──▶ INIT → REFLECT → INTEGRATE → EMIT       │
-│       │                                                  │
-│       ▼                                                  │
-│  CREPEvaluator ──▶ CREPScore(C, R, E, P)                │
-│       │                                                  │
-│       ▼                                                  │
-│  SigillinBridge ──▶ { sigil_id: activation_score }      │
-└─────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│                        Orchestrator v0.2.0                      │
+│                                                                  │
+│  FieldBridge ──▶ CosmicMoment                                   │
+│       │                │                                         │
+│       ▼                ▼                                         │
+│  AeonLayer(δ, t) ──▶ Lagrangian L                               │
+│       │                                                          │
+│       ▼                                                          │
+│  MirrorCore ──▶ INIT → REFLECT → INTEGRATE → EMIT               │
+│       │                │                                         │
+│       ▼                ▼                                         │
+│  PhaseDetector ──▶ PhaseTransitionEvent[]  (v0.2.0)             │
+│       │                                                          │
+│       ▼                                                          │
+│  CREPEvaluator ──▶ CREPScore(C, R, E, P)                        │
+│       │                                                          │
+│       ▼                                                          │
+│  SigillinBridge ──▶ { sigil_id: activation_score }              │
+└────────────────────────────────────────────────────────────────┘
+
+SelfReflector (v0.2.0) — closed-loop coupling (max 7 iterations):
+  AeonLayer → MirrorCore → CREPEvaluator ← SigillinBridge
+       ↑_______________gradient update__________________|
 ```
 
 ---
@@ -228,6 +271,11 @@ aeon info
 | `aeon_ai.sigillin_bridge` | `SigillinBridge` | Sigil activation engine |
 | `aeon_ai.field_bridge` | `FieldBridge` | Cosmic-moment modulation |
 | `aeon_ai.agents` | `Orchestrator` | Full pipeline coordinator |
+| `aeon_ai.phase_detector` | `PhaseDetector` | Real-time phase-transition detector *(v0.2.0)* |
+| `aeon_ai.phase_detector` | `detect_phases_from_core()` | One-shot trace analysis *(v0.2.0)* |
+| `aeon_ai.phase_detector` | `entropy_phase_label()` | Entropy → phase label *(v0.2.0)* |
+| `aeon_ai.self_reflection` | `SelfReflector` | Closed-loop self-reflection engine *(v0.2.0)* |
+| `aeon_ai.self_reflection` | `ReflectionLoopResult` | Loop result record *(v0.2.0)* |
 
 Full API documentation: [genesisaeon.github.io/aeon-ai](https://genesisaeon.github.io/aeon-ai)
 
@@ -279,15 +327,15 @@ If you use `aeon-ai` in academic work, please cite:
 ```bibtex
 @software{aeon_ai_2025,
   author    = {GenesisAeon},
-  title     = {aeon-ai: Self-reflective symbolic AI},
-  version   = {0.1.0},
-  year      = {2025},
-  doi       = {10.5281/zenodo.XXXXXXX},
+  title     = {aeon-ai: Real-time phase-transition detection and native self-reflection loop},
+  version   = {0.2.0},
+  year      = {2026},
+  doi       = {10.5281/zenodo.19132293},
   url       = {https://github.com/GenesisAeon/aeon-ai}
 }
 ```
 
-DOI: [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)
+DOI: [10.5281/zenodo.19132293](https://doi.org/10.5281/zenodo.19132293)
 
 ---
 
