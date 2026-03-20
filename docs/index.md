@@ -1,7 +1,7 @@
 # aeon-ai
 
-**DOI**: [10.5281/zenodo.19132293](https://doi.org/10.5281/zenodo.19132293)
-**Zenodo**: [https://zenodo.org/records/19132293](https://zenodo.org/records/19132293)
+**DOI**: [10.5281/zenodo.19139280](https://doi.org/10.5281/zenodo.19139280)
+**Zenodo**: [https://zenodo.org/records/19139280](https://zenodo.org/records/19139280)
 
 **Self-reflective symbolic AI — GenesisAeon Project v0.1.0**
 
