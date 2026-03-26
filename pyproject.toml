@@ -1,10 +1,10 @@
-[build-system]
+﻿[build-system]
 requires = ["hatchling>=1.21"]
 build-backend = "hatchling.build"
 
 [project]
 name = "aeon-ai"
-version = "0.2.0"
+version = "0.3.1"
 description = "Self-reflective symbolic AI: real-time phase-transition detection and native self-reflection loop with mirror-based cognition"
 readme = "README.md"
 license = { text = "MIT" }
@@ -139,3 +139,4 @@ dev = [
     "pytest-cov>=7.0.0",
     "ruff>=0.15.7",
 ]
+
