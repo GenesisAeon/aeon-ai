@@ -268,7 +268,7 @@ class Orchestrator:
     def _try_load_external(self) -> None:
         """Attempt to integrate unified-mandala-neural orchestrator hooks."""
         try:
-            import unified_mandala.neural.orchestrator as _umn  # type: ignore[import-untyped]
+            import unified_mandala.neural.orchestrator as _umn  # type: ignore[import-untyped,import-not-found]
 
             _umn.register(self)
         except (ImportError, AttributeError, Exception):  # noqa: BLE001

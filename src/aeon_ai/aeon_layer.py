@@ -223,8 +223,8 @@ class AeonLayer:
             An :class:`AeonLayer` instance, optionally wrapping the AWS base.
         """
         try:
-            from advanced_weighting_systems import (
-                AeonLayer as _AwsLayer,  # type: ignore[import-untyped]
+            from advanced_weighting_systems import (  # type: ignore[import-untyped,import-not-found]
+                AeonLayer as _AwsLayer,
             )
 
             base = _AwsLayer(**{k: v for k, v in kwargs.items() if k not in ("delta", "epsilon")})

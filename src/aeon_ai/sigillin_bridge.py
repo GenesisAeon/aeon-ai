@@ -253,7 +253,7 @@ class SigillinBridge:
     def _try_load_external(self) -> None:
         """Attempt to load sigils from installed ``sigillin`` package."""
         try:
-            import sigillin  # type: ignore[import-untyped]
+            import sigillin  # type: ignore[import-untyped,import-not-found]
 
             for raw in sigillin.registry():
                 sigil = Sigil(

@@ -1,4 +1,4 @@
-"""SelfReflector: Native AeonAI closed-loop self-reflection engine.
+r"""SelfReflector: Native AeonAI closed-loop self-reflection engine.
 
 Implements the *self-reflection loop*: an iterative coupling between the
 CREP quality score, the fieldtheory Lagrangian gradient, and the Sigillin
@@ -43,7 +43,7 @@ _CONVERGENCE_EPSILON: float = 1e-4
 
 @dataclass
 class IterationSnapshot:
-    """Snapshot of a single self-reflection iteration.
+    r"""Snapshot of a single self-reflection iteration.
 
     Attributes:
         iteration:        Zero-based iteration index.
@@ -196,7 +196,7 @@ class SelfReflector:
         sigil_text: str | None = None,
         metadata: dict[str, Any] | None = None,
     ) -> ReflectionLoopResult:
-        """Run the closed-loop self-reflection iteration.
+        r"""Run the closed-loop self-reflection iteration.
 
         Iterates at most :data:`MAX_ITER` (7) times, updating :math:`S_A`
         and :math:`S_V` via Lagrangian gradients and checking CREP convergence.

@@ -4,10 +4,10 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aeon-ai"
-version = "0.3.1"
+version = "1.0.0"
 description = "Self-reflective symbolic AI: real-time phase-transition detection and native self-reflection loop with mirror-based cognition"
 readme = "README.md"
-license = { text = "MIT" }
+license = { text = "GPL-3.0-or-later" }
 authors = [
     { name = "GenesisAeon", email = "genesis@aeon.ai" },
 ]
@@ -27,7 +27,7 @@ keywords = [
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -44,19 +44,20 @@ dependencies = [
 
 [project.optional-dependencies]
 stack = [
-    "mirror-machine>=0.1.0",
-    "entropy-governance>=0.1.0",
-    "sigillin>=0.1.0",
-    "utac-core>=0.1.0",
-    "mandala-visualizer>=0.1.0",
-    "cosmic-web>=0.1.0",
-    "advanced-weighting-systems>=0.1.0",
-    "fieldtheory>=0.1.0",
+    "mirror-machine>=1.0.0",
+    "entropy-governance>=1.0.0",
+    "sigillin>=1.0.0",
+    "utac-core>=1.0.0",
+    "mandala-visualizer>=1.0.0",
+    "cosmic-web>=1.0.0",
+    "advanced-weighting-systems>=1.0.0",
+    "fieldtheory>=1.0.0",
 ]
 dev = [
     "pytest>=8.0",
     "pytest-cov>=5.0",
     "ruff>=0.4",
+    "mypy>=1.10",
     "mkdocs>=1.6",
     "mkdocs-material>=9.5",
     "mkdocstrings[python]>=0.25",

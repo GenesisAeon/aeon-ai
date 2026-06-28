@@ -1,13 +1,12 @@
 {
-  "title": "GenesisAeon/aeon-ai: v0.2.0 – Real-time Phase-Transition Detection and Native Self-Reflection Loop",
-  "version": "0.2.0",
-  "doi": "10.5281/zenodo.19139280",
+  "title": "GenesisAeon/aeon-ai: v1.0.0 – Real-time Phase-Transition Detection and Native Self-Reflection Loop",
+  "version": "1.0.0",
   "creators": [
     {
       "name": "GenesisAeon Project"
     }
   ],
-  "description": "aeon-ai v0.2.0 adds real-time phase-transition detection (PhaseDetector, UTAC-Logistic trigger, collapse detection) and a native closed-loop self-reflection engine (SelfReflector, max 7 iterations, CREP-Lagrangian-Sigillin coupling) to the self-reflective mirror-based AeonAI framework for the GenesisAeon stack.",
+  "description": "aeon-ai v1.0.0 is the self-reflective mirror-based AeonAI framework for the GenesisAeon stack: real-time phase-transition detection (PhaseDetector, UTAC-Logistic trigger, collapse detection) and a native closed-loop self-reflection engine (SelfReflector, max 7 iterations, CREP-Lagrangian-Sigillin coupling). Part of the GenesisAeon ecosystem (P-AI-CORE, domain: AI core engine / Mirror-Machine self-reflection). Source code is licensed GPL-3.0-or-later; documentation is licensed CC BY 4.0.",
   "keywords": [
     "AeonAI",
     "CREP",
@@ -23,7 +22,7 @@
     "symbolic-ai",
     "fieldtheory"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "upload_type": "software",
   "access_right": "open",
   "related_identifiers": [
@@ -32,5 +31,8 @@
       "relation": "isSupplementTo",
       "scheme": "url"
     }
+  ],
+  "communities": [
+    { "identifier": "genesisaeon" }
   ]
 }

@@ -270,7 +270,7 @@ class FieldBridge:
             :class:`CosmicMoment` if ``fieldtheory`` is available, else ``None``.
         """
         try:
-            import fieldtheory  # type: ignore[import-untyped]
+            import fieldtheory  # type: ignore[import-untyped,import-not-found]
 
             raw = fieldtheory.cosmic_moment(t=t)
             return CosmicMoment(
