@@ -6,16 +6,15 @@ import pytest
 
 from aeon_ai.mirror_core import MirrorCore, MirrorPhase, ReflectionState
 from aeon_ai.phase_detector import (
+    _PHASE_ORDER,
+    _PHASE_SUCCESSOR,
     PhaseDetector,
     PhaseTransitionEvent,
     TransitionType,
-    _PHASE_ORDER,
-    _PHASE_SUCCESSOR,
     _entropy_to_phase_label,
     detect_phases_from_core,
     entropy_phase_label,
 )
-
 
 # ---------------------------------------------------------------------------
 # TransitionType

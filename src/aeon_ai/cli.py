@@ -43,7 +43,7 @@ def _parse_models(models_str: str) -> list[str]:
     return [m.strip().lower() for m in models_str.split(",") if m.strip()]
 
 
-def _build_orchestrator(entropy: float, delta: float) -> "Orchestrator":  # type: ignore[name-defined]  # noqa: F821
+def _build_orchestrator(entropy: float, delta: float) -> Orchestrator:  # type: ignore[name-defined]  # noqa: F821
     """Build an Orchestrator with entropy-derived field settings.
 
     Args:
@@ -58,7 +58,7 @@ def _build_orchestrator(entropy: float, delta: float) -> "Orchestrator":  # type
     return Orchestrator(delta=delta, base_entropy=entropy)
 
 
-def _try_visualize(result: "OrchestratorResult") -> None:  # type: ignore[name-defined]  # noqa: F821
+def _try_visualize(result: OrchestratorResult) -> None:  # type: ignore[name-defined]  # noqa: F821
     """Attempt to render mandala visualisation and sonification.
 
     Delegates to ``mandala-visualizer`` and ``cosmic-web`` if installed.
@@ -69,7 +69,7 @@ def _try_visualize(result: "OrchestratorResult") -> None:  # type: ignore[name-d
     """
     visualized = False
     try:
-        import mandala_visualizer  # type: ignore[import-untyped]
+        import mandala_visualizer  # type: ignore[import-untyped,import-not-found]
 
         mandala_visualizer.render(result.as_dict())
         visualized = True
@@ -77,7 +77,7 @@ def _try_visualize(result: "OrchestratorResult") -> None:  # type: ignore[name-d
         pass
 
     try:
-        import cosmic_web  # type: ignore[import-untyped]
+        import cosmic_web  # type: ignore[import-untyped,import-not-found]
 
         cosmic_web.sonify(result.cosmic_moment.as_dict())
         visualized = True
@@ -115,7 +115,7 @@ def _render_phases_table(events: list) -> None:  # noqa: ANN001
     rprint(table)
 
 
-def _render_loop_table(result: "ReflectionLoopResult") -> None:  # type: ignore[name-defined]  # noqa: F821
+def _render_loop_table(result: ReflectionLoopResult) -> None:  # type: ignore[name-defined]  # noqa: F821
     """Render a Rich table for a self-reflection loop result.
 
     Args:

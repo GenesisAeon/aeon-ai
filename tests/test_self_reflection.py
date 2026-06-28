@@ -2,17 +2,14 @@
 
 from __future__ import annotations
 
-import pytest
-
 from aeon_ai.self_reflection import (
+    _DEFAULT_ENTROPY_THRESHOLD,
+    _DEFAULT_STEP_SIZE,
     MAX_ITER,
     IterationSnapshot,
     ReflectionLoopResult,
     SelfReflector,
-    _DEFAULT_ENTROPY_THRESHOLD,
-    _DEFAULT_STEP_SIZE,
 )
-
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -38,7 +35,7 @@ class TestConstants:
 class TestIterationSnapshot:
     def _make_snapshot(self, iteration: int = 0, converged: bool = False) -> IterationSnapshot:
         from aeon_ai.crep_evaluator import CREPScore
-        from aeon_ai.mirror_core import MirrorCore, MirrorPhase, ReflectionState
+        from aeon_ai.mirror_core import MirrorPhase, ReflectionState
 
         crep = CREPScore(coherence=0.5, resonance=0.5, emergence=0.5, poetics=0.5)
         reflection = ReflectionState(
@@ -94,7 +91,7 @@ class TestIterationSnapshot:
 class TestReflectionLoopResult:
     def _make_result(self, n_snapshots: int = 3, converged: bool = False) -> ReflectionLoopResult:
         from aeon_ai.crep_evaluator import CREPScore
-        from aeon_ai.mirror_core import MirrorCore, MirrorPhase, ReflectionState
+        from aeon_ai.mirror_core import MirrorPhase, ReflectionState
 
         crep = CREPScore(coherence=0.6, resonance=0.6, emergence=0.6, poetics=0.6)
         reflection = ReflectionState(

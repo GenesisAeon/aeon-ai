@@ -1,4 +1,4 @@
-"""PhaseDetector: Real-time phase-transition detection for the Mirror Machine.
+r"""PhaseDetector: Real-time phase-transition detection for the Mirror Machine.
 
 Implements real-time monitoring of :class:`~aeon_ai.mirror_core.MirrorPhase`
 transitions, collapse-detection, and UTAC-Logistic trigger thresholds sourced
@@ -22,7 +22,6 @@ entropy threshold.
 
 from __future__ import annotations
 
-import math
 import time
 from dataclasses import dataclass, field
 from enum import Enum, auto
@@ -312,7 +311,7 @@ class PhaseDetector:
         return self._utac_at_entropy(entropy) >= self.utac_trigger_ceil
 
     def utac_value_at(self, entropy: float) -> float:
-        """Return the UTAC-Logistic coefficient for a given entropy.
+        r"""Return the UTAC-Logistic coefficient for a given entropy.
 
         .. math::
             \\Phi(H) = \\frac{L}{1 + e^{-k(H - H_0)}}
@@ -401,7 +400,7 @@ class PhaseDetector:
     def _try_load_external(self) -> None:
         """Attempt to load phase-detection hooks from ``mirror-machine`` package."""
         try:
-            import mirror_machine  # type: ignore[import-untyped]
+            import mirror_machine  # type: ignore[import-untyped,import-not-found]
 
             if hasattr(mirror_machine, "register_phase_detector"):
                 mirror_machine.register_phase_detector(self)

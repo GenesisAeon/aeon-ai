@@ -9,20 +9,15 @@ integrate with the orchestrator pipeline.
 from __future__ import annotations
 
 import sys
-from typing import Any
 from unittest.mock import MagicMock, patch
 
-import pytest
-
-from aeon_ai.agents.orchestrator import Orchestrator, OrchestratorResult
 from aeon_ai.aeon_layer import AeonLayer
-from aeon_ai.crep_evaluator import CREPEvaluator
+from aeon_ai.agents.orchestrator import Orchestrator, OrchestratorResult
 from aeon_ai.field_bridge import FieldBridge
 from aeon_ai.mirror_core import MirrorCore, MirrorPhase
 from aeon_ai.phase_detector import PhaseDetector, PhaseTransitionEvent, TransitionType
 from aeon_ai.self_reflection import MAX_ITER, ReflectionLoopResult, SelfReflector
 from aeon_ai.sigillin_bridge import SigillinBridge
-
 
 # ---------------------------------------------------------------------------
 # Contract: mirror-machine absent → PhaseDetector operates standalone
@@ -304,6 +299,7 @@ class TestPhaseDetectorMirrorCoreContract:
 class TestCLIV020Contract:
     def test_reflect_loop_flag(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -312,6 +308,7 @@ class TestCLIV020Contract:
 
     def test_reflect_loop_phases_flags(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -320,6 +317,7 @@ class TestCLIV020Contract:
 
     def test_reflect_phases_flag_standard_mode(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -328,7 +326,9 @@ class TestCLIV020Contract:
 
     def test_reflect_loop_json_output(self) -> None:
         import json
+
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -340,6 +340,7 @@ class TestCLIV020Contract:
 
     def test_detect_phase_command_default(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -348,6 +349,7 @@ class TestCLIV020Contract:
 
     def test_detect_phase_command_with_entropy(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -356,7 +358,9 @@ class TestCLIV020Contract:
 
     def test_detect_phase_json_output(self) -> None:
         import json
+
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -370,6 +374,7 @@ class TestCLIV020Contract:
 
     def test_detect_phase_invalid_entropy(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -378,6 +383,7 @@ class TestCLIV020Contract:
 
     def test_detect_phase_invalid_threshold(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -386,6 +392,7 @@ class TestCLIV020Contract:
 
     def test_detect_phase_invalid_utac_ceil(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -394,6 +401,7 @@ class TestCLIV020Contract:
 
     def test_info_shows_v020(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -402,6 +410,7 @@ class TestCLIV020Contract:
 
     def test_info_shows_phase_detector(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -410,6 +419,7 @@ class TestCLIV020Contract:
 
     def test_info_shows_self_reflector(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -418,6 +428,7 @@ class TestCLIV020Contract:
 
     def test_reflect_loop_visualize_flag(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -426,6 +437,7 @@ class TestCLIV020Contract:
 
     def test_reflect_loop_with_sigil(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
@@ -434,6 +446,7 @@ class TestCLIV020Contract:
 
     def test_detect_phase_triggered_high_entropy(self) -> None:
         from typer.testing import CliRunner
+
         from aeon_ai.cli import app
 
         runner = CliRunner()
