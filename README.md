@@ -4,7 +4,8 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
 [![Python](https://img.shields.io/pypi/pyversions/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/Code-GPLv3--or--later-blue.svg)](./LICENSE-CODE)
+[![License: CC BY 4.0](https://img.shields.io/badge/Docs-CC%20BY%204.0-lightgrey.svg)](./LICENSE-DOCS)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19139280.svg)](https://doi.org/10.5281/zenodo.19139280)
 [![Tests](https://github.com/GenesisAeon/aeon-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/aeon-ai/actions)
 
@@ -341,5 +342,9 @@ DOI: [10.5281/zenodo.19132293](https://doi.org/10.5281/zenodo.19132293)
 
 ## License
 
-[![MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-MIT — see [LICENSE](LICENSE).
+This repository is **dual-licensed**:
+
+- **Source code** — [GNU General Public License v3.0 or later (GPL-3.0-or-later)](LICENSE-CODE)
+- **Documentation** — [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DOCS)
+
+See [LICENSE](LICENSE) for the full split and scope of each license.
