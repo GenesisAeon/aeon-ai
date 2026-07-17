@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "aeon-ai"
+version: "1.0.0"
+date-released: "2026-03-26"
+authors:
+  - name: "GenesisAeon"
+    email: genesis@aeon.ai
+repository-code: "https://github.com/GenesisAeon/aeon-ai"
+license: GPL-3.0-or-later
+abstract: "Self-reflective symbolic AI: real-time phase-transition detection and native self-reflection loop with mirror-based cognition"
+keywords:
+  - GenesisAeon
+  - UTAC
+  - CREP
+  - open-science
+  - aeon
+  - mirror-machine
+  - self-reflection
+  - phase-transition
