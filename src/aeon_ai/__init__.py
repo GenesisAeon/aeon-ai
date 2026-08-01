@@ -1,7 +1,7 @@
 """aeon-ai: Self-reflective symbolic AI with mirror-based cognition.
 
 GenesisAeon Project — v0.2.0
-DOI: https://doi.org/10.5281/zenodo.19132293
+DOI: https://doi.org/10.5281/zenodo.21012126
 
 Core architecture:
     - AeonLayer       : fieldtheory Lagrangian weighting dynamics
@@ -61,4 +61,4 @@ __all__ = [
 
 __version__ = "0.2.0"
 __author__ = "GenesisAeon"
-__doi__ = "https://doi.org/10.5281/zenodo.19132293"
+__doi__ = "https://doi.org/10.5281/zenodo.21012126"

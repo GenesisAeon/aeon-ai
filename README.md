@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
 [![License: GPL v3](https://img.shields.io/badge/Code-GPLv3--or--later-blue.svg)](./LICENSE-CODE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Docs-CC%20BY%204.0-lightgrey.svg)](./LICENSE-DOCS)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19139280.svg)](https://doi.org/10.5281/zenodo.19139280)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21012126.svg)](https://doi.org/10.5281/zenodo.21012126)
 [![Tests](https://github.com/GenesisAeon/aeon-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/aeon-ai/actions)
 
 > *”A system that thinks — a memory that sings.”*
@@ -331,12 +331,12 @@ If you use `aeon-ai` in academic work, please cite:
   title     = {aeon-ai: Real-time phase-transition detection and native self-reflection loop},
   version   = {0.2.0},
   year      = {2026},
-  doi       = {10.5281/zenodo.19132293},
+  doi       = {10.5281/zenodo.21012126},
   url       = {https://github.com/GenesisAeon/aeon-ai}
 }
 ```
 
-DOI: [10.5281/zenodo.19132293](https://doi.org/10.5281/zenodo.19132293)
+DOI: [10.5281/zenodo.21012126](https://doi.org/10.5281/zenodo.21012126)
 
 ---
 
