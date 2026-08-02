@@ -1,5 +1,7 @@
 # aeon-ai
 
+**GenesisAeon Package P63**
+
 **Self-reflective symbolic AI — real-time phase-transition detection & native self-reflection loop — GenesisAeon v0.2.0**
 
 [![PyPI version](https://img.shields.io/pypi/v/aeon-ai.svg)](https://pypi.org/project/aeon-ai/)
